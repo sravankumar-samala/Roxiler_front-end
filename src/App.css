@@ -1,38 +1,84 @@
-.App {
+:root {
+  --clr-dark-blue: #0d003a;
+  --clr-green: #00cc44;
+  --clr-blue: #3300ff;
+  --clr-bluish-green: #2ea0fb;
+  --clr-white: rgb(255, 255, 255);
+  --clr-white-data: #ffffffd0;
+
+  /* shadows */
+  --bx-shadow-bottom: 0px 15px 20px -15px #111111;
+}
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+}
+#root {
+  background-color: rgb(233, 237, 245);
+}
+input,
+button,
+select {
+  outline: none;
+  border: none;
+  background: none;
+  font-size: clamp(0.7rem, 1.1vw, 1.5rem);
+}
+ul {
+  padding-left: 0;
+}
+
+.app-wrapper-container {
+  min-height: 100dvh;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  /* border: 1px solid green; */
+  padding: clamp(1em, 1.5vw, 2em);
+  padding-top: 0;
+  position: relative;
+}
+.app-header {
+  text-align: center;
+  position: relative;
+  box-shadow: var(--bx-shadow-bottom);
+}
+.app-header::after {
+  content: "";
+  position: absolute;
+  inset: 100% 0 0 0;
+  height: clamp(3px, 5vw, 7px);
+  background-color: var(--clr-bluish-green);
+  border-radius: 5px;
+}
+.app-header h1 {
+  text-transform: uppercase;
+  color: var(--clr-dark-blue);
+  font-size: clamp(1.3rem, 2.3vw, 2.7rem);
+}
+.main-container {
+  padding-block: clamp(2em, 3vw, 4em) 2em;
+  overflow: hidden;
+}
+.data-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
+}
+.data-container h2 {
+  color: var(--clr-dark-blue);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.data-container .info-text {
+  font-weight: normal;
+  font-size: clamp(0.9rem, 1.3vw, 1.5rem);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 460px) {
+  .data-container .info-text {
+    display: block;
+    margin-block: 10px;
   }
 }

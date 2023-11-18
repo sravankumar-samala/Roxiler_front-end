@@ -1,0 +1,5 @@
+.bar-chart-container {
+  width: min(60ch, 100%);
+  margin-inline: auto;
+  min-height: 300px;
+}

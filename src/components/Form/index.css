@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+  border-radius: 5px;
+  background-color: var(--clr-blue);
+  margin-bottom: 2em;
+  /* position: sticky;
+  top: 1em; */
+}
+
+label {
+  color: var(--clr-white);
+  font-weight: 500;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+}
+
+#select-month,
+.search-input {
+  padding: 0.5em;
+  border-radius: 3px;
+  color: var(--clr-dark-blue);
+  background-color: var(--clr-white);
+  font-weight: 500;
+}
+.search-input {
+  width: min(35ch, 100%);
+}
+.search-input::placeholder {
+  color: rgb(77, 95, 156);
+  letter-spacing: 0.7px;
+  font-weight: normal;
+}
+
+#select-month {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.3em;
+  }
+}

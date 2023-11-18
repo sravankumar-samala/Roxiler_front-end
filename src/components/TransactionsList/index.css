@@ -1,0 +1,88 @@
+.transactions-list-container {
+  min-height: 300px;
+  background: linear-gradient(var(--clr-blue), var(--clr-bluish-green));
+  padding: 1em;
+  border-radius: 10px;
+}
+.transactions-header-container {
+  position: relative;
+}
+
+.transactions-list-container h2 {
+  color: var(--clr-white) !important;
+}
+
+.table-container {
+  overflow: auto;
+  background: linear-gradient(to top, #ffffffbe, transparent);
+  border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+.table-container::-webkit-scrollbar-thumb {
+  border-radius: 1em;
+  background-color: rgba(71, 71, 71, 0.404);
+  visibility: hidden;
+}
+.table-container:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 20px;
+}
+table td,
+table th {
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+table th {
+  padding-block: 0.8em;
+}
+.header-row {
+  background-color: rgba(255, 255, 255, 0.616);
+}
+.data-row {
+  background-color: var(--clr-white-data);
+}
+.data-row:hover {
+  background-color: rgb(255, 255, 255);
+}
+.data-row:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.192);
+}
+.title {
+  min-width: 250px;
+  text-align: left;
+}
+.date-of-sale p {
+  margin-block: 5px;
+}
+
+.data-img {
+  width: 32px;
+  aspect-ratio: 1;
+  border-radius: 36px;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(128, 128, 128, 0.815);
+}
+
+@media screen and (max-width: 768px) {
+  table td,
+  table th {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .transactions-header-container {
+    display: grid;
+    place-items: center;
+    gap: 1em;
+  }
+}

@@ -1,0 +1,68 @@
+.limit-label {
+  --clr-tooltip-bg: rgb(194, 199, 226);
+  position: absolute;
+  bottom: 18px;
+  right: 0;
+  font-size: 1rem;
+  border: 1px solid var(--clr-white-data);
+  padding-left: 0.3em;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 540px) {
+  .limit-label {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+}
+.limit-label .limit-select {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: black;
+  background-color: var(--clr-white);
+  padding: 0.2em;
+  cursor: pointer;
+}
+.limit-label .limit-select option {
+  background-color: var(--clr-white-data);
+  color: var(--clr-dark-blue);
+}
+
+/* Tooltip  */
+
+.limit-label .tooltip {
+  visibility: hidden;
+  background-color: var(--clr-tooltip-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--clr-dark-blue);
+  text-align: center;
+  border-radius: 6px;
+  font-weight: normal;
+  font-size: 0.9rem;
+  padding: 5px 7px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 0;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.limit-label .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--clr-tooltip-bg) transparent transparent transparent;
+}
+
+.limit-label:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
